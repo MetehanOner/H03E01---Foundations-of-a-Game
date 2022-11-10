@@ -35,9 +35,9 @@ public class Game {
 
             char heroChar = 'H';
 
-            getGameBoard().set(heroPosX, heroPosY, dummyChar);
-
             int heroPosNewX = getHero().getPosX()-1;
+
+            getGameBoard().set(heroPosX, heroPosY, dummyChar);
 
             getHero().setPosX(heroPosNewX);
 
@@ -53,7 +53,7 @@ public class Game {
 
     public void moveDown(){
 
-        if(getHero().getPosY() < getGameBoard().getSizeY()-1){
+        if(getHero().getPosY() < getGameBoard().getSizeY()){
 
             char dummyChar = '_';
             int heroPosY = getHero().getPosY();
@@ -87,9 +87,9 @@ public class Game {
 
             char heroChar = 'H';
 
-            getGameBoard().set(heroPosX, heroPosY, dummyChar);
-
             int heroPosNewY = getHero().getPosY()-1;
+
+            getGameBoard().set(heroPosX, heroPosY, dummyChar);
 
             getHero().setPosY(heroPosNewY);
 
@@ -105,7 +105,7 @@ public class Game {
 
     public void moveRight() {
 
-        if(getHero().getPosY() < getGameBoard().getSizeY()-1){
+        if(getHero().getPosY() < getGameBoard().getSizeY()){
 
             char dummyChar = '_';
             int heroPosY = getHero().getPosY();
@@ -137,8 +137,11 @@ public class Game {
             return false;
         }
 
-        return getGameBoard().getBoardMatrix()[hPosX][hPosY] == getGameBoard().getBoardMatrix()[getGameBoard().getSizeX()-1][getGameBoard().getSizeY()-1];
+        if(getGameBoard().getBoardMatrix()[hPosX][hPosY] == getGameBoard().getBoardMatrix()[getGameBoard().getSizeX()-1][getGameBoard().getSizeY()-1]){
+            return true;
+        }
 
+        return false;
     }
 
     public void runGame(){
@@ -168,7 +171,7 @@ public class Game {
                     System.out.println("This input is not recognized, please enter again!");
             }
 
-        } while (isWon());
+        } while (!isWon());
 
         System.out.println("Hero has reached the goal!");
 
