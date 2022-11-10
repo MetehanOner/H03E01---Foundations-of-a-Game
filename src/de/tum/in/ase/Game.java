@@ -43,8 +43,6 @@ public class Game {
 
             getGameBoard().set(getHero().getPosX(), getHero().getPosY(), heroChar);
 
-            getGameBoard().printGameBoard();
-
         } else {
             System.out.println("The next move in this direction is outside of the game board, please try another move!");
         }
@@ -68,8 +66,6 @@ public class Game {
             getHero().setPosY(heroPosNewY);
 
             getGameBoard().set(getHero().getPosX(), getHero().getPosY(), heroChar);
-
-            getGameBoard().printGameBoard();
 
         } else {
             System.out.println("The next move in this direction is outside of the game board, please try another move!");
@@ -95,8 +91,6 @@ public class Game {
 
             getGameBoard().set(getHero().getPosX(), getHero().getPosY(), heroChar);
 
-            getGameBoard().printGameBoard();
-
         } else {
             System.out.println("The next move in this direction is outside of the game board, please try another move!");
         }
@@ -121,8 +115,6 @@ public class Game {
 
             getGameBoard().set(getHero().getPosX(), getHero().getPosY(), heroChar);
 
-            getGameBoard().printGameBoard();
-
         } else {
             System.out.println("The next move in this direction is outside of the game board, please try another move!");
         }
@@ -146,10 +138,8 @@ public class Game {
 
     public void runGame(){
 
-        getGameBoard().printGameBoard();
-
         do {
-
+            getGameBoard().printGameBoard();
             Scanner s = new Scanner(System.in);
             System.out.println("Please enter the first letter of the desired direction:");
             String input = s.nextLine().toLowerCase();
