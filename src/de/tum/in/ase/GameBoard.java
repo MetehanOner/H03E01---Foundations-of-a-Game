@@ -21,7 +21,8 @@ public class GameBoard {
             setSizeY(sizeY);
         }
 
-        boardMatrix = new char[sizeX][sizeY];
+        char[][] board = new char[sizeX][sizeY];
+        setBoardMatrix(board);
 
         char initTable = '_';
         for(int i = 0; i < sizeY ; i++){
@@ -80,5 +81,9 @@ public class GameBoard {
 
     public char[][] getBoardMatrix() {
         return boardMatrix;
+    }
+
+    public void setBoardMatrix(char[][] boardMatrix) {
+        this.boardMatrix = boardMatrix;
     }
 }
