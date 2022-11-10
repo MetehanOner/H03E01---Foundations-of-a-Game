@@ -51,7 +51,7 @@ public class Game {
 
     public void moveDown(){
 
-        if(getHero().getPosY() < getGameBoard().getSizeY()){
+        if(getHero().getPosY() < getGameBoard().getSizeY()-1){
 
             char dummyChar = '_';
             int heroPosY = getHero().getPosY();
@@ -99,7 +99,7 @@ public class Game {
 
     public void moveRight() {
 
-        if(getHero().getPosY() < getGameBoard().getSizeY()){
+        if(getHero().getPosX() < getGameBoard().getSizeX()-1){
 
             char dummyChar = '_';
             int heroPosY = getHero().getPosY();
@@ -185,7 +185,7 @@ public class Game {
 
     //You can run your game on main after you've implemented runGame()
     public static void main(String[] args) {
-        Game game = new Game(4, 3);
+        Game game = new Game(4, 4);
         game.runGame();
     }
 
