@@ -57,7 +57,7 @@ public class GameBoard {
     }
 
     public void printGameBoard() {
-        for(int k = 0; k < this.sizeY ;k++){
+        for(int k = 0; k < this.sizeY-1 ;k++){
             System.out.println(this.boardMatrix[k]);
         }
     }
