@@ -33,13 +33,15 @@ public class Game {
             int heroPosY = getHero().getPosY();
             int heroPosX = getHero().getPosX();
 
-            char heroChar = getGameBoard().get(heroPosX, heroPosY);
+            char heroChar = 'H';
 
             getGameBoard().set(heroPosX, heroPosY, dummyChar);
 
             int heroPosNewX = getHero().getPosX()-1;
 
-            getGameBoard().set(heroPosNewX, heroPosY, heroChar);
+            getHero().setPosX(heroPosNewX);
+
+            getGameBoard().set(getHero().getPosX(), getHero().getPosY(), heroChar);
 
             getGameBoard().printGameBoard();
 
@@ -51,19 +53,21 @@ public class Game {
 
     public void moveDown(){
 
-        if(getHero().getPosX() < getGameBoard().getSizeX()-1){
+        if(getHero().getPosY() < getGameBoard().getSizeY()-1){
 
             char dummyChar = '_';
             int heroPosY = getHero().getPosY();
             int heroPosX = getHero().getPosX();
 
-            char heroChar = getGameBoard().get(heroPosX, heroPosY);
+            char heroChar = 'H';
+
+            int heroPosNewY = getHero().getPosY()+1;
 
             getGameBoard().set(heroPosX, heroPosY, dummyChar);
 
-            int heroPosNewX = getHero().getPosX()+1;
+            getHero().setPosY(heroPosNewY);
 
-            getGameBoard().set(heroPosNewX, heroPosY, heroChar);
+            getGameBoard().set(getHero().getPosX(), getHero().getPosY(), heroChar);
 
             getGameBoard().printGameBoard();
 
@@ -81,13 +85,15 @@ public class Game {
             int heroPosY = getHero().getPosY();
             int heroPosX = getHero().getPosX();
 
-            char heroChar = getGameBoard().get(heroPosX, heroPosY);
+            char heroChar = 'H';
 
             getGameBoard().set(heroPosX, heroPosY, dummyChar);
 
             int heroPosNewY = getHero().getPosY()-1;
 
-            getGameBoard().set(heroPosX, heroPosNewY, heroChar);
+            getHero().setPosY(heroPosNewY);
+
+            getGameBoard().set(getHero().getPosX(), getHero().getPosY(), heroChar);
 
             getGameBoard().printGameBoard();
 
@@ -105,13 +111,15 @@ public class Game {
             int heroPosY = getHero().getPosY();
             int heroPosX = getHero().getPosX();
 
-            char heroChar = getGameBoard().get(heroPosX, heroPosY);
+            char heroChar = 'H';
 
             getGameBoard().set(heroPosX, heroPosY, dummyChar);
 
-            int heroPosNewY = getHero().getPosY()+1;
+            int heroPosNewX = getHero().getPosX()+1;
 
-            getGameBoard().set(heroPosX, heroPosNewY, heroChar);
+            getHero().setPosX(heroPosNewX);
+
+            getGameBoard().set(getHero().getPosX(), getHero().getPosY(), heroChar);
 
             getGameBoard().printGameBoard();
 
@@ -122,15 +130,8 @@ public class Game {
     }
 
     public boolean isWon(){
-        int heroPosY = getHero().getPosY();
-        int heroPosX = getHero().getPosX();
-        char heroChar = getGameBoard().get(heroPosX, heroPosY);
 
-        if (!(heroChar == getGameBoard().get(0, 0)) || (heroChar == getGameBoard().get(heroPosX, heroPosY))) {
-            return true;
-        }
-
-        return false;
+        return 'G' != getGameBoard().getBoardMatrix()[getGameBoard().getSizeX() - 1][getGameBoard().getSizeY() - 1];
 
     }
 
