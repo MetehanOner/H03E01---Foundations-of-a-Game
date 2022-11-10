@@ -26,22 +26,22 @@ public class GameBoard {
         char initTable = '_';
         for(int i = 0; i < sizeY ; i++){
             for(int j = 0; j < sizeX; j++){
-                boardMatrix[j][i] = initTable;
+                getBoardMatrix()[j][i] = initTable;
             }
         }
 
         char heroChar = 'H';
-        boardMatrix[0][0] = heroChar;
+        getBoardMatrix()[0][0] = heroChar;
 
         char goalChar = 'G';
-        boardMatrix[sizeX-1][sizeY-1] = goalChar;
+        getBoardMatrix()[sizeX-1][sizeY-1] = goalChar;
 
     }
 
     public char get(int x, int y) {
 
         if(x < getSizeX() && y < getSizeY()){
-            return this.boardMatrix[x][y];
+            return getBoardMatrix()[x][y];
         } else {
             return '\0';
         }
@@ -51,14 +51,14 @@ public class GameBoard {
     public void set(int x, int y, char value) {
 
         if(x < getSizeX() && y < getSizeY()){
-            boardMatrix[x][y] = value;
+            getBoardMatrix()[x][y] = value;
         }
 
     }
 
     public void printGameBoard() {
-        for(int k = 0; k < this.sizeY-1 ;k++){
-            System.out.println(this.boardMatrix[k]);
+        for(int k = 0; k < getSizeY() ;k++){
+            System.out.println(getBoardMatrix()[k]);
         }
     }
 
@@ -76,5 +76,9 @@ public class GameBoard {
 
     public int getSizeY() {
         return sizeY;
+    }
+
+    public char[][] getBoardMatrix() {
+        return boardMatrix;
     }
 }
