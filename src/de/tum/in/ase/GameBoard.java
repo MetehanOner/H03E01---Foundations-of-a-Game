@@ -58,8 +58,13 @@ public class GameBoard {
     }
 
     public void printGameBoard() {
-        for(int i = 0; i < getBoardMatrix().length ; i++){
-            System.out.println(getBoardMatrix()[i]);
+        for(int i = 0; i < getSizeX(); i++)
+        {
+            for(int j = 0; j < getSizeY(); j++)
+            {
+                System.out.print(getBoardMatrix()[i][j]);
+            }
+            System.out.println();
         }
     }
 
