@@ -126,7 +126,7 @@ public class Game {
         int heroPosX = getHero().getPosX();
         char heroChar = getGameBoard().get(heroPosX, heroPosY);
 
-        if (heroChar == getGameBoard().get(heroPosX, heroPosY)) {
+        if (!(heroChar == getGameBoard().get(0, 0)) || (heroChar == getGameBoard().get(heroPosX, heroPosY))) {
             return true;
         }
 
