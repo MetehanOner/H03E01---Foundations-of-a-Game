@@ -130,8 +130,14 @@ public class Game {
     }
 
     public boolean isWon(){
+        int hPosX = getHero().getPosX();
+        int hPosY = getHero().getPosY();
 
-        return 'G' != getGameBoard().getBoardMatrix()[getGameBoard().getSizeX() - 1][getGameBoard().getSizeY() - 1];
+        if (hPosX == 0 && hPosY == 0){
+            return false;
+        }
+
+        return getGameBoard().getBoardMatrix()[hPosX][hPosY] == getGameBoard().getBoardMatrix()[getGameBoard().getSizeX()-1][getGameBoard().getSizeY()-1];
 
     }
 
