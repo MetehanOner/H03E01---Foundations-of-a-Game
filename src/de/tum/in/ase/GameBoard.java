@@ -62,7 +62,7 @@ public class GameBoard {
         {
             for(int j = 0; j < getSizeX(); j++)
             {
-                System.out.print(getBoardMatrix()[j][i]);
+                System.out.print(getBoardMatrix()[j][i]+ " ");
             }
             System.out.println();
         }
