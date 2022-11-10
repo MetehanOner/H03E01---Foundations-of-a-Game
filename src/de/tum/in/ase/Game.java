@@ -192,7 +192,7 @@ public class Game {
 
     //You can run your game on main after you've implemented runGame()
     public static void main(String[] args) {
-        Game game = new Game(3, 3);
+        Game game = new Game(4, 3);
         game.runGame();
     }
 
