@@ -30,8 +30,8 @@ public class GameBoard {
             }
         }
 
-        //char heroChar = 'H';
-        //boardMatrix[0][0] = heroChar;
+        char heroChar = 'H';
+        boardMatrix[0][0] = heroChar;
 
         char goalChar = 'G';
         boardMatrix[sizeX-1][sizeY-1] = goalChar;
