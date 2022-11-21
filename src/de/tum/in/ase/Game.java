@@ -11,6 +11,14 @@ public class Game {
     private Hero hero;
     public Game(int sizeX, int sizeY) {
 
+        if(sizeX < 3){
+            sizeX = 3;
+        }
+
+        if(sizeY < 3){
+            sizeY = 3;
+        }
+
         GameBoard g = new GameBoard(sizeX, sizeY);
         Hero h = new Hero();
 
@@ -185,7 +193,7 @@ public class Game {
 
     //You can run your game on main after you've implemented runGame()
     public static void main(String[] args) {
-        Game game = new Game(4, 4);
+        Game game = new Game(1, 2);
         game.runGame();
     }
 
